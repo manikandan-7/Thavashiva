@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="#">
+        <title>Payment</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="bill.css" />    
+        <script type="text/javascript" src="bill.js"></script>
+        
+    </head>
+
+    <body>
+        <div class="cover">
+            <div class="header">
+                <h2>Hotel Taj</h2>
+            </div>
+            <div class="content">
+                <div class="amountbody">
+                    <div class="bodyname" id="billamount">
+                        <p>Bill Amount</p>
+                    </div>
+                    <div class="bodytype">
+                        <input type="number" id="billbox"/>
+                        <button onclick="amount()">Proceed</button>
+                    </div>
+                </div>
+
+                <div class="peoplebody">
+                    <div class="bodyname">
+                        <p>People Served</p>
+                    </div>
+                    <div class="bodytype">
+                        <input type="number" id="peoplebox"/>
+                        <button onclick="served()">Proceed</button>
+                    </div>
+                </div>
+
+                <div class="namebody" style="display: none;">
+                    <div class="names">
+                        <div class="name">
+                            <p>Name </p>
+                        </div>
+                        <div class="type">
+                            <input type="text"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="share">
+                    <div class="billname">
+                        <p>Shared bill</p>
+                    </div>
+                    <div class="billtype">
+                        <input id="sharebox"/>
+                        <button onclick="showtable()">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer" id="footer">
+                
+            </div>
+        </div>
+    </body>
+</html>
