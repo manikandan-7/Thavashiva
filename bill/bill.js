@@ -2,18 +2,14 @@ var bill;
 var people;
 var share;
 var names=[];
-function amount(){
-    bill=document.getElementById("billbox").value;
-}
 function addname(id){
 
     var buttonid=id.slice(6,id.length);
     var name=document.getElementById("name"+buttonid).value
     names.push(name);
-
-    alert(names);
 }
 function served(){
+    bill=document.getElementById("billbox").value;
     people=document.getElementById("peoplebox").value;
     share=bill/people;
     document.getElementById("sharebox").value=share;
@@ -40,25 +36,25 @@ function served(){
     }
 }
 function showtable(){
-    for(i=0;i<people;i++){
-    element=`
-    <div>
-    <table>
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-  </tr>
+    for(i=1;i<=people;i++){
+            document.getElementsByClassName('namebody')[i].style.display="none";
 
-  <tr>
-    <td>`+names[i]+`</td>
-    <td>`+share+`</td>
-  </tr>
- 
-</table>
-</div>
-`
-var node = document.createElement("div");               
-var ref=
     }
-    alert(element);
+    for(i=0;i<people;i++){
+    var element=`
+    <div class="tablename">
+        `+names[i]+`
+    </div>
+    <div classs="tableamount">
+        `+share+`
+    </div>
+    `
+    var footer=document.getElementById("footer");
+    var z=document.createElement('div');
+    z.setAttribute("class","table");
+    z.innerHTML=element;
+    footer.appendChild(z);
+    }
+    alert("Checkout your bill :)");
+    document.getElementsByClassName("receipt")[0].style.display="flex"
 }

@@ -9,10 +9,10 @@
         
     </head>
 
-    <body>
+    <body style="background-image: url(cover.jpg)">
         <div class="cover">
             <div class="header">
-                <h2>Hotel Taj</h2>
+                <img src="hotellogo.png">
             </div>
             <div class="content">
                 <div class="amountbody">
@@ -21,7 +21,6 @@
                     </div>
                     <div class="bodytype">
                         <input type="number" id="billbox"/>
-                        <button onclick="amount()">Proceed</button>
                     </div>
                 </div>
 
@@ -55,6 +54,9 @@
                         <button onclick="showtable()">Accept</button>
                     </div>
                 </div>
+            </div>
+            <div class="receipt" style="display: none;">
+                Hotel Receipt
             </div>
             <div class="footer" id="footer">
                 
