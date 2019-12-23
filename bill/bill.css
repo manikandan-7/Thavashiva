@@ -1,0 +1,59 @@
+body{
+    font-family: sans-serif;
+    background-color: black;
+    display: flex;
+}
+.cover{
+    display: flex;
+    flex-flow: column;
+    width: 600px;
+    border-radius: 10px;
+    background-color:transparent;
+    margin: 0px auto;
+}
+.header{
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    flex-flow: column;
+    margin: 10px;
+}
+.header>img{
+    margin-left: 80px;
+}
+.content{
+    width: 100%;
+    flex-flow: column;
+    margin: 10px;
+    margin-bottom: 25px;
+    
+}
+input {
+    border-radius: 5px;
+}
+button{
+    border-radius: 5px;
+}
+.table{
+    border: black;
+    border: 1px solid;
+    display: flex;
+}
+.tablename{
+    margin: 5px;
+    display: inline-block;
+    width: 50%;
+    border-right: 1px solid;
+}
+.tableamount{
+    display: inline-block;
+    width: 50%;
+    margin: 5px;
+}
+.namebody{
+    display: flex;
+}
+.receipt{
+    font-family: cursive;
+    font-size: xx-large;
+}
