@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="#">
+        <title>Giphy</title>
+        <link rel="stylesheet" type="text/css" href="giphy.css" />    
+        <script type="text/javascript" src="giphy.js"></script>
+        <script type="text/javascript" src="global.js"></script>
+
+    </head>
+
+    <body onload="window.onscroll()">
+        <div class="mainbody">
+            <form id="searchform">
+
+            <div class="search">
+                <div class="searchbar">
+                    <input id="searchbox" type="text" placeholder="Search Images Here !!!" onchange="searchgif(this.value)" />
+                </div>
+                <div class="searchbutton" id="myBtn">
+                    <p>Search</p>
+                </div>
+            </div>
+            </form>
+            <div id="imagebox">
+
+            </div>
+        </div>
+    </body>
+</html>
