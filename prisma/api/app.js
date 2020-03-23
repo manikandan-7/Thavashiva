@@ -16,14 +16,14 @@ app.post(`/showitems`, authenticateToken, async (req, res) => {
   res.json(publishedPosts)
 })
 
-app.post(`/viewproduct`, async (req, res) => {
+app.post(`/viewproduct`,authenticateToken, async (req, res) => {
   const publishedPosts = await prisma.product({
     productid: req.body.productid
   })
   res.json(publishedPosts)
 })
 
-app.post(`/userdefault1`, async (req, res) => {
+app.post(`/userdefault1`,authenticateToken, async (req, res) => {
   let fav = 0,
     item = 0
   const publishedPosts = await prisma.favorites({
@@ -55,7 +55,7 @@ app.post(`/userdefault1`, async (req, res) => {
     res.send("null")
 })
 
-app.post(`/addfav1`, async (req, res) => {
+app.post(`/addfav1`, authenticateToken,async (req, res) => {
   const query = `
     mutation {
       createFavorite(
@@ -74,7 +74,7 @@ app.post(`/addfav1`, async (req, res) => {
     .catch(err => res.send(err))
 })
 
-app.post(`/delfav1`, async (req, res) => {
+app.post(`/delfav1`, authenticateToken,async (req, res) => {
   await prisma.deleteManyFavorites({
 
       email: req.body.email,
@@ -86,7 +86,7 @@ app.post(`/delfav1`, async (req, res) => {
 })
 
 
-app.post(`/additems1`, async (req, res) => {
+app.post(`/additems1`,authenticateToken, async (req, res) => {
   const query = `
     mutation{
       createCart(data:{
@@ -110,7 +110,7 @@ app.post(`/additems1`, async (req, res) => {
     .catch(err => res.send(err))
 })
 
-app.post(`/delitems1`, async (req, res) => {
+app.post(`/delitems1`,authenticateToken, async (req, res) => {
   await prisma.deleteManyCarts({
 
       email: req.body.email,
@@ -121,7 +121,7 @@ app.post(`/delitems1`, async (req, res) => {
     .catch(err => res.send(err))
 })
 
-app.post(`/getcart1`, async (req, res) => {
+app.post(`/getcart1`,authenticateToken, async (req, res) => {
   const query = `
       query{
         carts(where:{email:"` + req.body.email + `"}){
@@ -140,7 +140,7 @@ app.post(`/getcart1`, async (req, res) => {
 
 })
 
-app.post(`/getwish1`, async (req, res) => {
+app.post(`/getwish1`,authenticateToken, async (req, res) => {
   const query = `
       {
         favorites(
@@ -165,7 +165,7 @@ app.post(`/getwish1`, async (req, res) => {
 
 })
 
-app.post(`/getorderviews`, async (req, res) => {
+app.post(`/getorderviews`,authenticateToken, async (req, res) => {
   const query = `
       {
         cartsConnection(where: { email: "` + req.body.email + `" }) {
@@ -181,7 +181,7 @@ app.post(`/getorderviews`, async (req, res) => {
 
 })
 
-app.post(`/adminstatus`, async (req, res) => {
+app.post(`/adminstatus`,authenticateToken, async (req, res) => {
   const query = `
       {
         user(where:{email:"` + req.body.email + `"})
@@ -196,7 +196,7 @@ app.post(`/adminstatus`, async (req, res) => {
 
 })
 
-app.post(`/getuser`, async (req, res) => {
+app.post(`/getuser`,authenticateToken, async (req, res) => {
   const query = `
       {
         user(where:{email:"` + req.body.email + `"})
@@ -213,7 +213,7 @@ app.post(`/getuser`, async (req, res) => {
 
 })
 
-app.post(`/checkaddress`, async (req, res) => {
+app.post(`/checkaddress`,authenticateToken, async (req, res) => {
   var resp = "invalid"
   if (req.body.firstname !== null || undefined) {
     if (req.body.lastname !== null || undefined) {
@@ -246,7 +246,7 @@ app.post(`/checkaddress`, async (req, res) => {
 })
 
 
-app.post(`/adminstatus`, async (req, res) => {
+app.post(`/adminstatus`,authenticateToken, async (req, res) => {
   const query = `
       {
         user(where:{email:"` + req.body.email + `"})
@@ -260,7 +260,7 @@ app.post(`/adminstatus`, async (req, res) => {
   else res.send("false")
 })
 
-app.post(`/addorders`, async (req, res) => {
+app.post(`/addorders`,authenticateToken, async (req, res) => {
   const transid = Math.random()
   const query = `
       {
@@ -316,7 +316,7 @@ app.post(`/addorders`, async (req, res) => {
 
 })
 
-app.post(`/searchproducts`, async (req, res) => {
+app.post(`/searchproducts`,authenticateToken, async (req, res) => {
   const query = `
       {
         products(where:{
@@ -334,7 +334,7 @@ app.post(`/searchproducts`, async (req, res) => {
   res.json(publishedPosts.products)
 })
 
-app.post(`/getmyorder`, async (req, res) => {
+app.post(`/getmyorder`,authenticateToken, async (req, res) => {
   const query = `
       {
         orders(
@@ -361,7 +361,7 @@ app.post(`/getmyorder`, async (req, res) => {
 
 
 
-app.post(`/getordertransid`, async (req, res) => {
+app.post(`/getordertransid`,authenticateToken, async (req, res) => {
   const query = `
       {
         orders(
@@ -547,7 +547,7 @@ return jwt.sign(user, "dhava")
 
 
 
-app.get('/post/:postId', async (req, res) => {
+app.get('/post/:postId', authenticateToken,async (req, res) => {
   const {
     postId
   } = req.params
@@ -557,7 +557,7 @@ app.get('/post/:postId', async (req, res) => {
   res.json(post)
 })
 
-app.get('/orders', async (req, res) => {
+app.get('/orders',authenticateToken, async (req, res) => {
   const fragment = `
 fragment UserWithOrder on User {
   name
@@ -585,7 +585,7 @@ fragment UserWithOrder on User {
   res.status(200).send(userWithPosts)
 })
 
-app.post('/user', async (req, res) => {
+app.post('/user', authenticateToken,async (req, res) => {
   const newUser = await prisma.createUser(req.body)
   res.json(newUser)
 })
@@ -595,7 +595,7 @@ app.post('/post/draft', async (req, res) => {
   res.json(newPost)
 })
 
-app.put(`/post/publish/:postId`, async (req, res) => {
+app.put(`/post/publish/:postId`,authenticateToken, async (req, res) => {
   const {
     postId
   } = req.params
