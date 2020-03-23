@@ -1,0 +1,124 @@
+type Cart{
+  id: ID! @unique
+  createdAt: DateTime!
+  email: String!
+  mail: String
+  productid: String @unique
+  updatedAt: DateTime! 
+  productdetail: [Product!] 
+}
+
+
+type FailedJob{
+  id: ID! @unique
+  connection: String!
+  exception: String!
+  failedAt: DateTime! 
+  payload: String!
+  queue: String!
+}
+
+type Favorite{
+  id: ID! @unique
+  createdAt: DateTime! 
+  email: String
+  productid: String @unique
+  updatedAt: DateTime!  
+  owner:[User!]!
+  productdetail: [Product!] 
+
+}
+
+type Migration  {
+  id: ID! @unique
+  batch: Int!
+  migration: String!
+}
+
+type Order {
+  id: ID! @unique
+  createdAt: DateTime! 
+  email: String 
+  feedback: String
+  productid: String
+  rating: String
+  remind: String
+  return: String
+  status: String
+  transid: String
+  updatedAt: DateTime! 
+  owner: User!
+  productdetail: Product!
+}
+
+type Ordernotif{
+  id: ID! @unique
+  createdAt: DateTime! 
+  email: String
+  productid: String
+  updatedAt: DateTime! 
+  view: String
+}
+
+type Product {
+  id:ID! @unique
+  productid: String! @unique
+  createdAt: DateTime !
+  desc: String
+  exclusive: String
+  image: String
+  name: String
+  plusprice: String
+  price: String
+  pricedrop: String
+  return: String
+  seller: String
+  updatedAt: DateTime !
+  userdetail: [Cart!]! 
+  
+}
+
+type Project  {
+  id: ID! @unique
+  createdAt: DateTime !
+  description: String!
+  name: String!
+  updatedAt: DateTime! 
+  userId: Int! 
+
+}
+
+type Token {
+  refresh: ID! @unique
+  access: String
+  createdAt: DateTime !
+  updatedAt: DateTime !
+}
+
+type User  {
+  id:ID! @unique
+  email:String @unique
+  address: String
+  createdAt: DateTime! 
+  favorites: Json
+  isadmin: String
+  issuper: String
+  items: Json
+  name: String
+  number: String
+  password: String
+  payment: String
+  phone: String
+  plus: String
+  reqadmin: String
+  updatedAt: DateTime! 
+  favs:[Favorite!]
+  }
+
+type Viewnotif {
+  id: ID! @unique
+  createdAt: DateTime!
+  email: String
+  productid: String
+  updatedAt: DateTime! 
+}
