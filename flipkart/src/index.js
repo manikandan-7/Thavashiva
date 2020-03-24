@@ -24,4 +24,4 @@ const client = new ApolloClient({
 ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<ApolloProvider client={client}><Graphqlapp /></ApolloProvider>, document.getElementById('root'));
 
-serviceWorker.unregister();
+serviceWorker.register();

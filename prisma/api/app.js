@@ -181,7 +181,7 @@ app.post(`/getorderviews`,authenticateToken, async (req, res) => {
 
 })
 
-app.post(`/adminstatus`,authenticateToken, async (req, res) => {
+app.post(`/adminstatus`, async (req, res) => {
   const query = `
       {
         user(where:{email:"` + req.body.email + `"})
@@ -191,7 +191,10 @@ app.post(`/adminstatus`,authenticateToken, async (req, res) => {
       }`
   const publishedPosts = await prisma.$graphql(query).catch(err => console.log(err))
   if (publishedPosts.user)
+  {
+  console.log(publishedPosts.user.isadmin)
     res.json(publishedPosts.user.isadmin)
+  }
   else res.json("")
 
 })
@@ -612,14 +615,12 @@ app.put(`/post/publish/:postId`,authenticateToken, async (req, res) => {
 
 
 function authenticateToken(req, res, next) {
-
   const authHeader = JSON.parse(req.headers.authorization)
-  console.log(req.headers.authorization)
+  // console.log(req.headers.authorization)
 
   if (authHeader !== undefined) {
     const token = JSON.parse(req.headers.authorization)
     if (token == null) return res.sendStatus(401)
-    console.log(token)
     jwt.verify(token, "dhava", (err, user) => {
       console.log(err)
       if (err) return res.sendStatus(403)
