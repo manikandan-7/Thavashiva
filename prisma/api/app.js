@@ -192,8 +192,8 @@ app.post(`/adminstatus`, async (req, res) => {
   const publishedPosts = await prisma.$graphql(query).catch(err => console.log(err))
   if (publishedPosts.user)
   {
-  console.log(publishedPosts.user.isadmin)
-    res.json(publishedPosts.user.isadmin)
+  console.log("admin:",publishedPosts.user.isadmin)
+    res.text(publishedPosts.user.isadmin)
   }
   else res.json("")
 
