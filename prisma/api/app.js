@@ -7,6 +7,13 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
+const configureStripe = require('stripe');
+
+const STRIPE_SECRET_KEY = process.env.NODE_ENV === process.env.MODE
+    ? process.env.STRIPE_SECRET_KEY
+    : process.env.STRIPE_SECRET_KEY;
+
+const stripe = configureStripe(STRIPE_SECRET_KEY);
 
 app.use(bodyParser.json())
 app.use(cors())
@@ -621,7 +628,7 @@ function authenticateToken(req, res, next) {
   if (authHeader !== undefined) {
     const token = JSON.parse(req.headers.authorization)
     if (token == null) return res.sendStatus(401)
-    jwt.verify(token, "dhava", (err, user) => {
+    jwt.verify(token, process.env.JWTPASSWORD, (err, user) => {
       console.log(err)
       if (err) return res.sendStatus(403)
       req.user = user
