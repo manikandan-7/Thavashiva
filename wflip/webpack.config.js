@@ -34,3 +34,8 @@ module.exports = {
       })
    ]
 };
+
+module.exports = (env) => {
+   return require(`./.env.${env}`)
+ }
+ 
