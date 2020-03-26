@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useEffect}from 'react';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
@@ -17,15 +17,14 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function Snackbars() {
+export default function Snackbars(props) {
+    
     const classes = useStyles();
     const [open,
         setOpen] = React.useState(false);
+    
 
-    const handleClick = () => {
-        setOpen(true);
-    };
-
+   
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
             return;
@@ -34,14 +33,20 @@ export default function Snackbars() {
         setOpen(false);
     };
 
+    useEffect(() => {
+        if(props.title!==""){
+        setOpen(true)
+        }
+    }, [props.title])
+
+
     return (
         <div className={classes.root}>
-            <Button variant="outlined" onClick={handleClick}>
-                Open success snackbar
-            </Button>
-            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            
+            <Snackbar open={open} autoHideDuration={10000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="success">
-                    This is a success message!
+                    {props.title}
+                    {props.body}
                 </Alert>
             </Snackbar>
         </div>

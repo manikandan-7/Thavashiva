@@ -7,13 +7,8 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
-const configureStripe = require('stripe');
 
-const STRIPE_SECRET_KEY = process.env.NODE_ENV === process.env.MODE
-    ? process.env.STRIPE_SECRET_KEY
-    : process.env.STRIPE_SECRET_KEY;
 
-const stripe = configureStripe(STRIPE_SECRET_KEY);
 
 app.use(bodyParser.json())
 app.use(cors())
@@ -200,7 +195,7 @@ app.post(`/adminstatus`, async (req, res) => {
   if (publishedPosts.user)
   {
   console.log("admin:",publishedPosts.user.isadmin)
-    res.text(publishedPosts.user.isadmin)
+    res.json(publishedPosts.user.isadmin)
   }
   else res.json("")
 
@@ -514,8 +509,74 @@ app.post(`/login`, async (req, res) => {
 function generateAccessToken(user) {
 return jwt.sign(user, "dhava")
 }
+})
+
+app.post(`/updatepushtoken`,authenticateToken, async (req, res) => {
+  const query = `
+  mutation{
+  
+    upsertToken(
+      where:{email:"`+req.body.email+`"},
+      create:{
+        email:"`+req.body.email+`",
+        pushtoken:"`+req.body.token+`"
+      },
+      update:{pushtoken:"`+req.body.token+`"}
+    ){
+      email
+      pushtoken
+    }
+  }`
+  await prisma.$graphql(query).then(data=>res.json("updated"))
+  .catch(err=>res.json(err))
+})
 
 
+app.post(`/pushfcm`,async (req, res) => {
+  var pushtoken;
+  const query = `
+  query{
+    token(where:{
+      email:"`+req.body.email+`"
+    }){
+      email
+      pushtoken
+    }
+    user(where:{
+      email:"thavasiva1999@gmail.com",
+      
+    }){
+    active
+    }
+  }`
+  await prisma.$graphql(query)
+  .then(data=>{
+    if(data.user.active!=="true"){
+      res.json("Not active")
+    }
+    pushtoken=data.token.pushtoken
+  })
+  
+  .catch(err=>res.json(err))
+
+  await fetch('https://fcm.googleapis.com/fcm/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization':'key=AAAA8H3Wm_s:APA91bG8WZhr1DuOoKXEd5gSvkNC6Zl30c0jTflGIGSV9yJHNvQwh-BOsnvx0ronxAg2d5zS_ZCxKPYHbb2OQn5d6j0HZD3VxIGn8iVMCF1PyJNJ_AT0ImFWLszgvSmbmTnemoWWkFW3'
+                },
+                body: JSON.stringify({
+                    "notification": {
+                        "title": req.body.title,
+                        "body": req.body.body,
+                        "click_action": "http://localhost:3000/"
+                    },
+                    "to": pushtoken
+                })
+            }).then(data=>
+              res.json(data))
+
+    
 })
 
 
@@ -628,7 +689,7 @@ function authenticateToken(req, res, next) {
   if (authHeader !== undefined) {
     const token = JSON.parse(req.headers.authorization)
     if (token == null) return res.sendStatus(401)
-    jwt.verify(token, process.env.JWTPASSWORD, (err, user) => {
+    jwt.verify(token, 'dhava', (err, user) => {
       console.log(err)
       if (err) return res.sendStatus(403)
       req.user = user

@@ -90,7 +90,8 @@ type Project  {
 
 type Token {
   refresh: ID! @unique
-  access: String
+  email:String ! @unique
+  pushtoken:String
   createdAt: DateTime !
   updatedAt: DateTime !
 }
@@ -113,6 +114,7 @@ type User  {
   reqadmin: String
   updatedAt: DateTime! 
   favs:[Favorite!]
+  active:String
   }
 
 type Viewnotif {

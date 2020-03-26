@@ -5,6 +5,10 @@ import './index.css';
 import Graphqlapp from './graphqlapp';
 import * as serviceWorker from './serviceWorker';
 import App from './App'
+import firebase from 'firebase'
+import { initializeFirebase } from './push-notification';
+import registerServiceWorker from './serviceWorker';
+
 
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -21,7 +25,20 @@ const client = new ApolloClient({
   link
 })
 
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("./firebase-messaging-sw.js")
+    .then(function(registration) {
+      console.log("Registration successful, scope is:", registration.scope);
+    })
+    .catch(function(err) {
+      console.log("Service worker registration failed, error:", err);
+    });
+}
+
 ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<ApolloProvider client={client}><Graphqlapp /></ApolloProvider>, document.getElementById('root'));
 
-serviceWorker.register();
+registerServiceWorker();
+initializeFirebase(); 
