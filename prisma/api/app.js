@@ -551,7 +551,7 @@ app.post(`/pushfcm`,async (req, res) => {
   }`
   await prisma.$graphql(query)
   .then(data=>{
-    if(data.user.active!=="true"){
+    if(data.user.active!=="true"&&req.body.type==="market"){
       res.json("Not active")
     }
     pushtoken=data.token.pushtoken
