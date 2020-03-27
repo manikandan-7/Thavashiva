@@ -3,6 +3,8 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import {makeStyles} from '@material-ui/core/styles';
+import {BrowserRouter as Router, Link, Route, Switch, withRouter} from 'react-router-dom';
+
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props}/>;
@@ -42,13 +44,17 @@ export default function Snackbars(props) {
 
     return (
         <div className={classes.root}>
-            
-            <Snackbar open={open} autoHideDuration={10000} onClose={handleClose}>
+              <Link
+                        to={{
+                        pathname: "/viewproduct/"+parseInt(props.body),
+                        productid: parseInt(props.body)
+                    }}>
+            <Snackbar  open={open} autoHideDuration={10000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="success">
                     {props.title}
-                    {props.body}
                 </Alert>
             </Snackbar>
+            </Link>
         </div>
     );
 }

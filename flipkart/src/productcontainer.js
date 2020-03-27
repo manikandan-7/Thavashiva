@@ -359,7 +359,7 @@ class Productcontainer extends React.Component {
                     </Typography>
                     <Link
                         to={{
-                        pathname: "/viewproduct",
+                        pathname: "/viewproduct/"+product.productid,
                         productid: product
                     }}>
                         <Typography

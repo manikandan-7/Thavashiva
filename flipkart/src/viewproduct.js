@@ -17,13 +17,14 @@ import { withRouter} from 'react-router-dom'
         this.callAPI()
     }
     callAPI = async() => {
+        let url=window.location.href
         var response = await fetch('http://localhost:9000/viewproduct', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                productid:requestAnimationFrame.body.productid,
+                productid:parseInt(url.slice(34,url.length)),
             })
         });
         const body = await response.json();
