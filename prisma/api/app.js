@@ -9,7 +9,7 @@ const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
 
 
-
+tokenList=[]
 app.use(bodyParser.json())
 app.use(cors())
 
@@ -487,14 +487,15 @@ app.post(`/login`, async (req, res) => {
                 }
 
                 const accessToken = generateAccessToken(user)
-                const refreshToken = jwt.sign(user, "dhava")
-                
-                        res.json({
-                            accessToken: accessToken,
-                            refreshToken: refreshToken,
-                            signedIn: "Signed In"
-                    
-            })
+                const refreshToken = jwt.sign(user, "dhava",{expiresIn:"90000"})
+                const response={
+                  accessToken: accessToken,
+                  refreshToken: refreshToken,
+                  signedIn: "Signed In"
+  }
+  tokenList[refreshToken] = response
+
+                        res.json(response)
           }
      else {
             res.json({status:"Wrong Password!"});
@@ -507,7 +508,7 @@ app.post(`/login`, async (req, res) => {
 
 
 function generateAccessToken(user) {
-return jwt.sign(user, "dhava")
+return jwt.sign(user, "dhava",{expiresIn:'20000'})
 }
 })
 
@@ -683,19 +684,22 @@ app.put(`/post/publish/:postId`,authenticateToken, async (req, res) => {
 
 
 function authenticateToken(req, res, next) {
-  const authHeader = JSON.parse(req.headers.authorization)
-  // console.log(req.headers.authorization)
 
-  if (authHeader !== undefined) {
-    const token = JSON.parse(req.headers.authorization)
-    if (token == null) return res.sendStatus(401)
-    jwt.verify(token, 'dhava', (err, user) => {
-      console.log(err)
-      if (err) return res.sendStatus(403)
-      req.user = user
+  const postData = JSON.parse(req.headers.Authorization)
+  // if refresh token exists
+  if((postData.refreshToken) && (postData.refreshToken in tokenList)) {
+      const user = {
+          "email": postData.email,
+      }
+      const token = jwt.sign(user, config.secret, { expiresIn: "20000"})
+     
+      // update the token in the list
+      tokenList[postData.refreshToken].token = token
       next()
-    })
+  } else {
+      res.status(404).send('Invalid request')
   }
+
 }
 
 

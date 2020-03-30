@@ -81,6 +81,13 @@ class Home extends Component {
     }
 
     componentDidMount() {
+        navigator
+        .serviceWorker
+        .addEventListener("message", (message) => {
+            new Notification(message.data['firebase-messaging-msg-data'].notification.title)
+  
+            console.log(message.data['firebase-messaging-msg-data'].notification)
+        });
         this.adminstatus()
         this.getuser()
         window.addEventListener('scroll', this.listenToScroll);

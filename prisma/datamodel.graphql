@@ -89,7 +89,6 @@ type Project  {
 }
 
 type Token {
-  refresh: ID! @unique
   email:String ! @unique
   pushtoken:String
   createdAt: DateTime !
