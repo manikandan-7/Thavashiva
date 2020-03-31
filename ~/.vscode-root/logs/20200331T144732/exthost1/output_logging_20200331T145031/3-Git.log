@@ -1,0 +1,230 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /home/dhava
+> git status -z -u
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :covidmap/react/covid/public/index.html
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/public/index.html
+> git show :covidmap/maps.html
+> git ls-files --stage -- /home/dhava/covidmap/maps.html
+> git check-ignore -v -z --stdin
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git check-ignore -v -z --stdin
+> git show :covidmap/maps.html
+> git ls-files --stage -- /home/dhava/covidmap/maps.html
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/maps.html
+> git ls-files --stage -- /home/dhava/covidmap/maps.html
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/react/covid/public/index.html
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/public/index.html
+> git show :covidmap/maps.html
+> git ls-files --stage -- /home/dhava/covidmap/maps.html
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/public/index.html
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/public/index.html
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/maps.html
+> git ls-files --stage -- /home/dhava/covidmap/maps.html
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/public/index.html
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/public/index.html
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/public/index.html
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/public/index.html
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/App.css
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.css
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/App.css
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.css
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/App.css
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.css
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/sample.html
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/sample.html
+> git check-ignore -v -z --stdin
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/sample.html
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/sample.html
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git check-ignore -v -z --stdin
+> git show :covidmap/react/covid/public/index.html
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/public/index.html
+> git show :covidmap/react/covid/src/here.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/here.js
+> git check-ignore -v -z --stdin
+> git show :covidmap/react/covid/src/App.css
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.css
+> git show :covidmap/react/covid/src/heremaps.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/heremaps.js
+> git check-ignore -v -z --stdin
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git show :covidmap/react/covid/node_modules/fusioncharts/viz/column2d.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/node_modules/fusioncharts/viz/column2d.js
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :covidmap/react/covid/node_modules/@fusioncharts/charts/src/chart/column2d/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/node_modules/@fusioncharts/charts/src/chart/column2d/index.js
+> git check-ignore -v -z --stdin
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git show :covidmap/react/covid/public/index.html
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/public/index.html
+> git check-ignore -v -z --stdin
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :covidmap/api/app.js
+> git ls-files --stage -- /home/dhava/covidmap/api/app.js
+> git check-ignore -v -z --stdin
+> git show :covidmap/api/bin/www
+> git ls-files --stage -- /home/dhava/covidmap/api/bin/www
+> git show :covidmap/api/app.js
+> git ls-files --stage -- /home/dhava/covidmap/api/app.js
+> git check-ignore -v -z --stdin
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git check-ignore -v -z --stdin
+> git show :covidmap/api/routes/users.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/users.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/api/routes/users.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/users.js
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/api/app.js
+> git ls-files --stage -- /home/dhava/covidmap/api/app.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git show :covidmap/api/app.js
+> git ls-files --stage -- /home/dhava/covidmap/api/app.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/api/app.js
+> git ls-files --stage -- /home/dhava/covidmap/api/app.js
+> git show :covidmap/api/bin/www
+> git ls-files --stage -- /home/dhava/covidmap/api/bin/www
+> git show :covidmap/api/app.js
+> git ls-files --stage -- /home/dhava/covidmap/api/app.js
+> git show :covidmap/react/covid/src/heremaps.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/heremaps.js
+> git show :covidmap/api/app.js
+> git ls-files --stage -- /home/dhava/covidmap/api/app.js
+> git show :covidmap/react/covid/src/index.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/index.js
+> git show :covidmap/api/app.js
+> git ls-files --stage -- /home/dhava/covidmap/api/app.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/api/app.js
+> git ls-files --stage -- /home/dhava/covidmap/api/app.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/api/app.js
+> git ls-files --stage -- /home/dhava/covidmap/api/app.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/api/routes/mapdata.js
+> git ls-files --stage -- /home/dhava/covidmap/api/routes/mapdata.js
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/src/App.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/App.js
+> git show :covidmap/react/covid/src/map.js
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
+> git show :covidmap/react/covid/.gitignore
+> git ls-files --stage -- /home/dhava/covidmap/react/covid/.gitignore

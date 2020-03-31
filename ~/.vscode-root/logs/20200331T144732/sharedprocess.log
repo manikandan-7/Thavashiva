@@ -1,0 +1,12 @@
+[2020-03-31 14:47:36.641] [sharedprocess] [info] main {"machineId":"c841bfd687478cba9b40bb0c63717cb72565cbe5999e8379f9ae216d86257519","windowId":2}
+[2020-03-31 14:47:36.960] [sharedprocess] [info] Deleted from disk dsznajder.es7-react-js-snippets /home/dhava/.vscode/extensions/dsznajder.es7-react-js-snippets-2.7.0
+[2020-03-31 14:47:37.131] [sharedprocess] [info] Deleted from disk dbaeumer.vscode-eslint /home/dhava/.vscode/extensions/dbaeumer.vscode-eslint-2.1.1
+[2020-03-31 14:47:37.314] [sharedprocess] [info] Deleted from disk prisma.prisma /home/dhava/.vscode/extensions/prisma.prisma-0.0.28
+[2020-03-31 14:47:37.322] [sharedprocess] [info] Deleted from disk deepscan.vscode-deepscan /home/dhava/.vscode/extensions/deepscan.vscode-deepscan-1.9.7
+[2020-03-31 14:48:16.662] [sharedprocess] [info] Starting to clean up unused language packs.
+[2020-03-31 14:50:32.862] [sharedprocess] [info] Installing extension: prisma.prisma
+[2020-03-31 14:50:36.539] [sharedprocess] [info] Downloaded extension: prisma.prisma /tmp/77ecb694-b542-448b-94c3-6b2c459ea4fe
+[2020-03-31 14:50:36.695] [sharedprocess] [info] Extracted extension to /home/dhava/.vscode/extensions/.prisma.prisma-0.0.30: prisma.prisma
+[2020-03-31 14:50:36.696] [sharedprocess] [info] Renamed to /home/dhava/.vscode/extensions/prisma.prisma-0.0.30
+[2020-03-31 14:50:36.697] [sharedprocess] [info] Installation completed. prisma.prisma
+[2020-03-31 14:50:36.710] [sharedprocess] [info] Extensions installed successfully: prisma.prisma

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sdssetpolygonstyleHTML</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <style type='text/css'>body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
+    </head>
+    <body>
+        <div id='printoutPanel'></div>
+        
+        <div id='myMap' style='width: 100vw; height: 100vh;'></div>
+        <script type='text/javascript'>
+            function loadMapScenario() {
+                var polygonStyle = {
+                        fillColor: 'red',
+                        strokeColor: '#a495b2',
+                        strokeThickness: 2
+                }
+                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                    /* No need to set credentials if already passed in URL */
+                    center: new Microsoft.Maps.Location(20.5937, 78.9629),
+                    zoom: 11
+                });
+                //Create an array of locations to get the boundaries of
+                var zipCodes = ['638051'];
+                var geoDataRequestOptions = {
+                    entityType: 'Postcode1',
+                    getAllPolygons: true
+                };
+                Microsoft.Maps.loadModule('Microsoft.Maps.SpatialDataService', function () {
+                    //Use the GeoData API manager to get the boundary
+    
+                    Microsoft.Maps.SpatialDataService.GeoDataAPIManager.getBoundary(zipCodes, geoDataRequestOptions, map, function (data) {
+                        if (data.results && data.results.length > 0) {
+                            map.entities.push(data.results[0].Polygons);
+                        }
+                        polygonStyle = {
+                        fillColor: 'yellow',
+                        strokeColor: '#a495b2',
+                        strokeThickness: 2
+                    };
+                    }, polygonStyle, function errCallback(networkStatus, statusMessage) {
+                        console.log(networkStatus);
+                        console.log(statusMessage);
+                    });
+                });
+                
+            }
+        </script>
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Aj3LZwsDmp-bzWq7uvaQANuMoOluxMwEVXv0oFXi62US1KxwFB8esK0mYEB2Fndv&callback=loadMapScenario' async defer></script>
+    </body>
+</html>
