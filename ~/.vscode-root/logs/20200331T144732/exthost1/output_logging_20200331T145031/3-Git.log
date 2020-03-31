@@ -228,3 +228,4 @@ Use '--' to separate paths from revisions, like this:
 > git ls-files --stage -- /home/dhava/covidmap/react/covid/src/map.js
 > git show :covidmap/react/covid/.gitignore
 > git ls-files --stage -- /home/dhava/covidmap/react/covid/.gitignore
+> git check-ignore -v -z --stdin
