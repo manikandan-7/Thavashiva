@@ -1,135 +1,180 @@
 var express = require('express');
 var router = express.Router();
+var fetch=require('node-fetch')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/',async function(req, res, next) {
+    const response = await fetch('https://api.covid19india.org/state_district_wise.json', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const body = await response.json();
+    console.log(body['Tamil Nadu'].districtData)
+    districtwise={}
+    try{
+        districtwise.Erode=body['Tamil Nadu'].districtData.Erode.confirmed
+        districtwise.Chennai=body['Tamil Nadu'].districtData.Chennai.confirmed
+        districtwise.Kancheepuram=body['Tamil Nadu'].districtData.Kancheepuram.confirmed
+        districtwise.Coimbatore=body['Tamil Nadu'].districtData.Coimbatore.confirmed
+        districtwise.Tirunelveli=body['Tamil Nadu'].districtData.Tirunelveli.confirmed
+        districtwise.Tiruppur=body['Tamil Nadu'].districtData.Tiruppur.confirmed
+        districtwise.Madurai=body['Tamil Nadu'].districtData.Madurai.confirmed
+        districtwise.Salem=body['Tamil Nadu'].districtData.Salem.confirmed
+        districtwise.Vellore=body['Tamil Nadu'].districtData.Vellore.confirmed
+        districtwise.Tiruchirappalli=body['Tamil Nadu'].districtData.Tiruchirappalli.confirmed
+        districtwise.Chengalpattu=body['Tamil Nadu'].districtData.Chengalpattu.confirmed
+        districtwise.Thanjavur=body['Tamil Nadu'].districtData.Thanjavur.confirmed
+        districtwise.Virudhunagar=body['Tamil Nadu'].districtData.Virudhunagar.confirmed
+        districtwise.Karur=body['Tamil Nadu'].districtData.Karur.confirmed
+        districtwise.Tiruvannamalai=body['Tamil Nadu'].districtData.Tiruvannamalai.confirmed
+        districtwise.Vilupram=body['Tamil Nadu'].districtData.Vilupram.confirmed
+        districtwise.Namakkal=body['Tamil Nadu'].districtData.Namakkal.confirmed
+        districtwise.Kanniyakumari=body['Tamil Nadu'].districtData.Kanniyakumari.confirmed
+        districtwise.Thoothukudi=body['Tamil Nadu'].districtData.Thoothukudi.confirmed
+        districtwise.Dharmapuri=body['Tamil Nadu'].districtData.Dharmapuri.confirmed
+        districtwise.Cuddalore=body['Tamil Nadu'].districtData.Erode.confirmed
+        districtwise.Dindigul=body['Tamil Nadu'].districtData.Erode.confirmed
+        districtwise.Nagapattinam=body['Tamil Nadu'].districtData.Erode.confirmed
+        districtwise.Perambalur=body['Tamil Nadu'].districtData.Erode.confirmed
+        districtwise.Ariyalur=body['Tamil Nadu'].districtData.Erode.confirmed
+        districtwise.Pudukkottai=body['Tamil Nadu'].districtData.Erode.confirmed
+        districtwise.Ramanathapuram=body['Tamil Nadu'].districtData.Erode.confirmed
+        districtwise.Sivaganga=body['Tamil Nadu'].districtData.Erode.confirmed
+
+    }
+    catch(e){
+        console.log(e)
+    }
+ 
     var data=[{
         "id": "IN.TN.ER",
-        "value": "432"
+        "value": districtwise.Erode
       },
       {
         "id": "IN.TN.DI",
-        "value": "120"
+        "value": districtwise.Dindigul
       }, ,
       {
         "id": "IN.TN.CU",
-        "value": "0"
+        "value": districtwise.Cuddalore
       },
       {
         "id": "IN.TN.CO",
-        "value": "0"
+        "value":districtwise.Coimbatore
       },
       {
         "id": "IN.TN.DH",
-        "value": "0"
+        "value": districtwise.Dharmapuri
       },
       {
         "id": "IN.TN.TP",
-        "value": "0"
+        "value":districtwise.Tiruppur
       },
       {
         "id": "IN.TN.MA",
-        "value": "0"
+        "value": districtwise.Madurai
       },
       {
         "id": "IN.TN.NG",
-        "value": "0"
+        "value": districtwise.Nagapattinam
       },
       {
         "id": "IN.TN.NM",
-        "value": "0"
+        "value": districtwise.Namakkal
       },
       {
         "id": "IN.TN.PE",
-        "value": "0"
+        "value": districtwise.Perambalur
       },
       {
         "id": "IN.TN.AR",
-        "value": "0"
+        "value": districtwise.Ariyalur
       },
       {
         "id": "IN.TN.PU",
-        "value": "0"
+        "value": districtwise.Pudukkottai
       },
       {
         "id": "IN.TN.RA",
-        "value": "0"
+        "value": districtwise.Ramanathapuram
       },
       {
         "id": "IN.TN.SA",
-        "value": "0"
+        "value": districtwise.Salem
       },
       {
         "id": "IN.TN.SI",
-        "value": "0"
+        "value": districtwise.Sivaganga
       },
       {
         "id": "IN.TN.TJ",
-        "value": "0"
+        "value": districtwise.Thanjavur
       },
       {
         "id": "IN.TN.NI",
-        "value": "0"
+        "value": districtwise.Nilgris
       },
       {
         "id": "IN.TN.TH",
-        "value": "0"
+        "value": districtwise.Theni
       },
       {
         "id": "IN.TN.TL",
-        "value": "0"
+        "value": districtwise.Tirunelveli
       },
       {
         "id": "IN.TN.CH",
-        "value": "0"
+        "value": districtwise.Chennai
       },
       {
         "id": "IN.TN.TR",
-        "value": "0"
+        "value": districtwise.Tiruvarur
       },
       {
         "id": "IN.TN.TK",
-        "value": "0"
+        "value": districtwise.Thoothukudi
       },
       {
         "id": "IN.TN.TC",
-        "value": "0"
+        "value": districtwise.Tiruchirappalli
       },
       {
         "id": "IN.TN.TI",
-        "value": "0"
+        "value": districtwise.Tirunelveli
       },
       {
         "id": "IN.TN.TV",
-        "value": "0"
+        "value": districtwise.Tiruvannamalai
       },
       {
         "id": "IN.TN.VE",
-        "value": "0"
+        "value": districtwise.Vellore
       },
       {
         "id": "IN.TN.VL",
-        "value": "0"
+        "value": districtwise.Vilupram
       },
       {
         "id": "IN.TN.VR",
-        "value": "0"
+        "value": districtwise.Virudhunagar
       },
       {
         "id": "IN.TN.KC",
-        "value": "0"
+        "value": districtwise.Kanchipuram
       },
       {
         "id": "IN.TN.KI",
-        "value": "70"
+        "value": districtwise.Krishnagiri
       },
       {
         "id": "IN.TN.KR",
-        "value": "0"
+        "value": districtwise.Karur
       },
       {
         "id": "IN.TN.KK",
-        "value": "0"
+        "value": districtwise.Kanniyakumari
       }
     ]
   res.send(data)
