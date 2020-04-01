@@ -24,7 +24,7 @@ import Table from './table'
       }
       mapdata=async()=>{
           let url='http://localhost:9000/mapdata';
-        const response = await fetch('http://129.59.13.123:9000/mapdata', {
+        const response = await fetch('http://139.59.13.123:9000/mapdata', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
