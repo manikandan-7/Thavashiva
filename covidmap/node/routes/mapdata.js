@@ -11,7 +11,7 @@ router.get('/',async function(req, res, next) {
         }
     });
     const body = await response.json();
-    console.log(body['Tamil Nadu'].districtData)
+//     console.log(body['Tamil Nadu'].districtData)
     districtwise={}
     try{
         districtwise.Erode=body['Tamil Nadu'].districtData.Erode.confirmed
