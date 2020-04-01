@@ -45,7 +45,7 @@ router.get('/',async function(req, res, next) {
 
     }
     catch(e){
-        console.log(e)
+//         console.log(e)
     }
  
     var data=[{
