@@ -49,10 +49,36 @@ router.get('/',async function(req, res, next) {
 //         console.log(e)
     }
  
-    var data=[{
+    var data=[
+        {
+            "id": "IN.TN.CO",
+            "value":districtwise.Coimbatore,
+            "name":"districtwise.Coimbatore".slice(13)
+    
+          },
+        {
+            "id": "IN.TN.CH",
+            "value": districtwise.Chennai,
+            "name":"districtwise.Chennai".slice(13)
+    
+          },
+          {
         "id": "IN.TN.ER",
         "value": districtwise.Erode,
         "name":"districtwise.Erode".slice(13)
+      },
+       
+      {
+        "id": "IN.TN.TI",
+        "value": districtwise.Tirunelveli,
+        "name":"districtwise.Tirunelveli".slice(13)
+
+      },
+      {
+        "id": "IN.TN.MA",
+        "value": districtwise.Madurai,
+        "name":"districtwise.Madurai".slice(13)
+
       },
       {
         "id": "IN.TN.DI",
@@ -65,12 +91,7 @@ router.get('/',async function(req, res, next) {
         "name":"districtwise.Cuddalore".slice(13)
 
       },
-      {
-        "id": "IN.TN.CO",
-        "value":districtwise.Coimbatore,
-        "name":"districtwise.Coimbatore".slice(13)
-
-      },
+      
       {
         "id": "IN.TN.DH",
         "value": districtwise.Dharmapuri,
@@ -83,12 +104,7 @@ router.get('/',async function(req, res, next) {
         "name":"districtwise.Tiruppur".slice(13)
 
       },
-      {
-        "id": "IN.TN.MA",
-        "value": districtwise.Madurai,
-        "name":"districtwise.Madurai".slice(13)
-
-      },
+     
       {
         "id": "IN.TN.NG",
         "value": districtwise.Nagapattinam,
@@ -132,6 +148,12 @@ router.get('/',async function(req, res, next) {
 
       },
       {
+        "id": "IN.TN.TL",
+        "value": districtwise.Tiruvarur,
+        "name":"districtwise.Tiruvarur".slice(13)
+
+      },
+      {
         "id": "IN.TN.SI",
         "value": districtwise.Sivaganga,
         "name":"districtwise.Sivaganga".slice(13)
@@ -155,24 +177,9 @@ router.get('/',async function(req, res, next) {
         "name":"districtwise.Theni".slice(13)
 
       },
-      {
-        "id": "IN.TN.TL",
-        "value": districtwise.Tirunelveli,
-        "name":"districtwise.Tirunelveli".slice(13)
-
-      },
-      {
-        "id": "IN.TN.CH",
-        "value": districtwise.Chennai,
-        "name":"districtwise.Chennai".slice(13)
-
-      },
-      {
-        "id": "IN.TN.TR",
-        "value": districtwise.Tiruvarur,
-        "name":"districtwise.Tiruvarur".slice(13)
-
-      },
+      
+      
+     
       {
         "id": "IN.TN.TK",
         "value": districtwise.Thoothukudi,
