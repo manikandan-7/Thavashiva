@@ -20,12 +20,11 @@ import Table from './table'
           }
       }
       componentDidMount=()=>{
-          console.log("hihihi")
           this.mapdata()
       }
       mapdata=async()=>{
           let url='http://localhost:9000/mapdata';
-        const response = await fetch(url, {
+        const response = await fetch('http://localhost:9000/mapdata', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
