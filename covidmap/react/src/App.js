@@ -28,7 +28,8 @@ export default function App() {
       <AppBar position="static">
         <Toolbar variant="dense">
           <Typography variant="h6" color="inherit">
-            COVID-19 
+            COVID-19  Tamilnadu Districts-wise Info
+
           </Typography>
         </Toolbar>
       </AppBar>

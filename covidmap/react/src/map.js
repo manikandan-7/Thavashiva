@@ -6,7 +6,7 @@ import React, {
   import World from 'fusioncharts/maps/fusioncharts.world';
   import ReactFC from 'react-fusioncharts';
   import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
-  
+import Table from './table'  
   ReactFC.fcRoot(FusionCharts, Maps, World, FusionTheme);
   
  
@@ -56,21 +56,17 @@ import React, {
                     "minvalue": "0",
                     "maxvalue": "0",
                     "code": "#008000",
-                    "displayValue": "No cases"
                   }, {
                     "minvalue": "1",
                     "maxvalue": "5",
                     "code": "#B0BF92",
-                    "displayValue": "Fewer cases"
                   }, {
                     "minvalue": "6",
                     "maxvalue": "50",
-                    "code": "#91AF64",
+                    "code": "#FF0000",
                   }, {
                     "minvalue": "51",
-                    "maxvalue": "500",
                     "code": "#FF0000",
-                    "displayValue": "Extreme cases"
                   }]
               },
               "data": this.state.mapdata,
@@ -78,16 +74,15 @@ import React, {
             },
           };
       return(
-      <div>
-          <div>
-          <h2>Tamilnadu Districts-wise Info</h2>
+      <div className="content">
+          <div >
       <ReactFC {
         ...chartConfigs
       }
       />
       </div>
-      <div>
-          
+      <div className="tabledata">
+          <Table data={this.state.mapdata}/>
       </div>
       </div>
       )

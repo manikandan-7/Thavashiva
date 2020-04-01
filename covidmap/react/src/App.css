@@ -110,3 +110,13 @@ div#eleven {
 label {
   display: block;
 }
+
+.tabledata{
+  width: fit-content;
+  display: flex;
+}
+
+.content{
+  display: flex;
+  margin-top: 15px;
+}
