@@ -5,7 +5,7 @@ var fetch=require('node-fetch')
 /* GET users listing. */
 router.get('/',async function(req, res, next) {
     let url='http://api.covid19india.org/state_district_wise.json';
-    const response = await fetch(url, {
+    const response = await fetch('http://api.covid19india.org/state_district_wise.json', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
