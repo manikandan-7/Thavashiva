@@ -176,7 +176,7 @@ router.get('/',async function(req, res, next) {
       },
       {
         "id": "IN.TN.VL",
-        "value": districtwise.Vilupram,
+        "value": districtwise.Viluppuram,
         "name":"districtwise.Vilupram".slice(13)
 
       },
