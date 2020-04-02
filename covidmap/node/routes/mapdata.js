@@ -14,41 +14,11 @@ router.get('/',async function(req, res, next) {
     const body = await response.json();
 //     console.log(body['Tamil Nadu'].districtData)
     districtwise={}
-    try{
-        districtwise.Erode=body['Tamil Nadu'].districtData.Erode.confirmed
-        districtwise.Chennai=body['Tamil Nadu'].districtData.Chennai.confirmed
-        districtwise.Kancheepuram=body['Tamil Nadu'].districtData.Kancheepuram.confirmed
-        districtwise.Coimbatore=body['Tamil Nadu'].districtData.Coimbatore.confirmed
-        districtwise.Tirunelveli=body['Tamil Nadu'].districtData.Tirunelveli.confirmed
-        districtwise.Tiruppur=body['Tamil Nadu'].districtData.Tiruppur.confirmed
-        districtwise.Namakkal=body['Tamil Nadu'].districtData.Namakkal.confirmed
-        districtwise.Madurai=body['Tamil Nadu'].districtData.Madurai.confirmed
-        districtwise.Salem=body['Tamil Nadu'].districtData.Salem.confirmed
-        districtwise.Vellore=body['Tamil Nadu'].districtData.Vellore.confirmed
-        districtwise.Tiruchirappalli=body['Tamil Nadu'].districtData.Tiruchirappalli.confirmed
-        districtwise.Chengalpattu=body['Tamil Nadu'].districtData.Chengalpattu.confirmed
-        districtwise.Thanjavur=body['Tamil Nadu'].districtData.Thanjavur.confirmed
-        districtwise.Virudhunagar=body['Tamil Nadu'].districtData.Virudhunagar.confirmed
-        districtwise.Karur=body['Tamil Nadu'].districtData.Karur.confirmed
-        districtwise.Tiruvannamalai=body['Tamil Nadu'].districtData.Tiruvannamalai.confirmed
-        districtwise.Vilupram=body['Tamil Nadu'].districtData.Vilupram.confirmed
-        districtwise.Kanniyakumari=body['Tamil Nadu'].districtData.Kanniyakumari.confirmed
-        districtwise.Thoothukudi=body['Tamil Nadu'].districtData.Thoothukudi.confirmed
-        districtwise.Dharmapuri=body['Tamil Nadu'].districtData.Dharmapuri.confirmed
-        districtwise.Cuddalore=body['Tamil Nadu'].districtData.Cuddalore.confirmed
-        districtwise.Dindigul=body['Tamil Nadu'].districtData.Dindigul.confirmed
-        districtwise.Nagapattinam=body['Tamil Nadu'].districtData.Nagapattinam.confirmed
-        districtwise.Perambalur=body['Tamil Nadu'].districtData.Perambalur.confirmed
-        districtwise.Ariyalur=body['Tamil Nadu'].districtData.Ariyalur.confirmed
-        districtwise.Pudukkottai=body['Tamil Nadu'].districtData.Pudukkottai.confirmed
-        districtwise.Ramanathapuram=body['Tamil Nadu'].districtData.Ramanathapuram.confirmed
-        districtwise.Sivaganga=body['Tamil Nadu'].districtData.Sivaganga.confirmed
+     Object.keys(body['Tamil Nadu'].districtData).forEach((key,index)=>{
+      // console.log(key,body['Tamil Nadu'].districtData[key].confirmed)
+      districtwise[key]=body['Tamil Nadu'].districtData[key].confirmed
 
-    }
-    catch(e){
-//         console.log(e)
-    }
- 
+    })
     var data=[
         {
             "id": "IN.TN.CO",
