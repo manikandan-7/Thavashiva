@@ -1,40 +1,46 @@
 {
-  "name": "covid",
-  "version": "0.1.0",
-  "private": true,
+  "name": "wcovidmap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack-dev-server": "webpack-dev-server",
+    "dev": "webpack-dev-server --mode=development",
+    "prod": "webpack --mode=production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.9.8",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
     "fusioncharts": "^3.15.1-sr.1",
     "leaflet": "^1.6.0",
     "material-table": "^1.57.2",
     "react": "^16.13.1",
-    "react-bingmaps": "^3.6.1",
     "react-dom": "^16.13.1",
     "react-fusioncharts": "^3.1.2",
     "react-leaflet": "^2.6.3",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "style-loader": "^1.1.3"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "html-webpack-plugin": "^4.0.4",
+    "path": "^0.12.7",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }

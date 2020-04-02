@@ -16,7 +16,7 @@ export default class Table extends React.Component {
     }
     
     render(){
-    console.log(this.props.data)
+    // console.log(this.props.data)
     var sample=[{
         "name":"Erode",
         "value":19
