@@ -21,6 +21,7 @@ router.get('/',async function(req, res, next) {
         districtwise.Coimbatore=body['Tamil Nadu'].districtData.Coimbatore.confirmed
         districtwise.Tirunelveli=body['Tamil Nadu'].districtData.Tirunelveli.confirmed
         districtwise.Tiruppur=body['Tamil Nadu'].districtData.Tiruppur.confirmed
+        districtwise.Namakkal=body['Tamil Nadu'].districtData.Namakkal.confirmed
         districtwise.Madurai=body['Tamil Nadu'].districtData.Madurai.confirmed
         districtwise.Salem=body['Tamil Nadu'].districtData.Salem.confirmed
         districtwise.Vellore=body['Tamil Nadu'].districtData.Vellore.confirmed
@@ -31,7 +32,6 @@ router.get('/',async function(req, res, next) {
         districtwise.Karur=body['Tamil Nadu'].districtData.Karur.confirmed
         districtwise.Tiruvannamalai=body['Tamil Nadu'].districtData.Tiruvannamalai.confirmed
         districtwise.Vilupram=body['Tamil Nadu'].districtData.Vilupram.confirmed
-        districtwise.Namakkal=body['Tamil Nadu'].districtData.Namakkal.confirmed
         districtwise.Kanniyakumari=body['Tamil Nadu'].districtData.Kanniyakumari.confirmed
         districtwise.Thoothukudi=body['Tamil Nadu'].districtData.Thoothukudi.confirmed
         districtwise.Dharmapuri=body['Tamil Nadu'].districtData.Dharmapuri.confirmed
