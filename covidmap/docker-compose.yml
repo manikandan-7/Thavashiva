@@ -1,0 +1,31 @@
+version: "3"
+services:
+  
+       
+    backend:
+        container_name: awesome_server
+        build:
+            context: ./node
+            dockerfile: DockerFile
+        image: sample/awesome_server
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./node:/usr/src/app
+
+
+    frontend:
+        container_name: sample_container
+        build:
+            context: ./react
+            dockerfile: Dockerfile
+        image: sample/sample_container
+        ports:
+            - "80:80"
+        volumes:
+            - ./react:/usr/src/app
+        links:
+            - backend
+        command: npm start
+        tty: true
+

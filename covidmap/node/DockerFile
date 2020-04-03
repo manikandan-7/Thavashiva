@@ -1,0 +1,15 @@
+FROM node:latest
+
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+# Install app dependencies
+COPY package*.json ./
+
+EXPOSE 9000
+
+RUN npm install
+
+# You can change this
+CMD [ "npm", "start" ]
