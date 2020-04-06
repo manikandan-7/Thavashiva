@@ -10,3 +10,9 @@
 [2020-03-31 14:50:36.696] [sharedprocess] [info] Renamed to /home/dhava/.vscode/extensions/prisma.prisma-0.0.30
 [2020-03-31 14:50:36.697] [sharedprocess] [info] Installation completed. prisma.prisma
 [2020-03-31 14:50:36.710] [sharedprocess] [info] Extensions installed successfully: prisma.prisma
+[2020-04-01 14:45:01.299] [sharedprocess] [info] Installing extension: ms-python.python
+[2020-04-01 14:47:06.767] [sharedprocess] [info] Downloaded extension: ms-python.python /tmp/23d83469-3691-4108-bae8-15a3791be9f8
+[2020-04-01 14:47:09.802] [sharedprocess] [info] Extracted extension to /home/dhava/.vscode/extensions/.ms-python.python-2020.3.71113: ms-python.python
+[2020-04-01 14:47:09.802] [sharedprocess] [info] Renamed to /home/dhava/.vscode/extensions/ms-python.python-2020.3.71113
+[2020-04-01 14:47:09.806] [sharedprocess] [info] Installation completed. ms-python.python
+[2020-04-01 14:47:09.855] [sharedprocess] [info] Extensions installed successfully: ms-python.python

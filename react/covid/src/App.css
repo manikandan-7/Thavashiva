@@ -2,6 +2,49 @@
   text-align: center;
 }
 
+.main{
+  /* background-image: url(845360.jpg); */
+  background-color: black;
+  /* Full height */
+  height: fit-content; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+}
+.progressbar{
+  display: inline-flex;
+  width: 300px;
+  float: right;
+  z-index: 150;
+}
+.bottombar{
+  margin-top:60px;
+  border: grey 1px solid;
+  margin-right: 5px;
+  height: 50px;
+}
+.linearprogress{
+  color: aliceblue;
+  width: 22%;
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 8px;
+}
+.circularprogressbar{
+  margin-left:30px;
+}
+.map{
+  width:100%;
+}
+.data{
+  width: 40%;
+  z-index: 100;
+  /* background-color: black; */
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -103,10 +146,28 @@ div#eleven {
   grid-gap: 3px;
 }
 
-.map {
-  border: 3px solid white;
-}
+
 
 label {
   display: block;
+}
+
+.tabledata{
+  width: fit-content;
+  display: flex;
+}
+
+.content{
+  display: flex;
+  margin-top: 15px;
+}
+
+.statistics{
+  display: flex;
+  color: white;
+}
+h5{
+  color: white;
+  margin-bottom: 0px;
+  margin-top: 4 px;
 }
