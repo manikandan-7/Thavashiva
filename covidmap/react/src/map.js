@@ -1,92 +1,95 @@
 import React, {
-    Component
-  } from 'react';
-  import FusionCharts from 'fusioncharts';
-  import Maps from 'fusioncharts/fusioncharts.maps';
-  import World from 'fusioncharts/maps/fusioncharts.world';
-  import ReactFC from 'react-fusioncharts';
-  import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
-import Table from './table'  
-  ReactFC.fcRoot(FusionCharts, Maps, World, FusionTheme);
-  
- 
-  
-  class Map extends Component {
-      constructor(props) {
-          super(props)
-      
-          this.state = {
-               mapdata:[]
-          }
-      }
-      componentDidMount=()=>{
-          this.mapdata()
-      }
-      mapdata=async()=>{
-          let url='http://localhost:9000/mapdata';
-        const response = await fetch('http://139.59.13.123:9000/mapdata', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        const body = await response.json();
-        // console.log(body)
+  Component
+} from 'react';
+import Prismazoom from 'react-prismazoom'
 
-        this.setState({
-            mapdata:body
-        })
-      }
-      
-    render() {
-        const chartConfigs = {
-            type: 'maps/tamilnadu',
-            width: 600,
-            height: 400,
-            dataFormat: 'json',
-            dataSource: {
-              "chart": {
-                "caption": "Covid-19 cases",
-                "theme": "fusion",
-                "formatNumberScale": "0",
-                "numberSuffix": " People"
-              },
-              "colorrange": {
-                "color": [{
-                    "minvalue": "0",
-                    "maxvalue": "0",
-                    "code": "#008000",
-                  }, {
-                    "minvalue": "1",
-                    "maxvalue": "5",
-                    "code": "#B0BF92",
-                  }, {
-                    "minvalue": "6",
-                    "maxvalue": "50",
-                    "code": "#FF0000",
-                  }, {
-                    "minvalue": "51",
-                    "code": "#FF0000",
-                  }]
-              },
-              "data": this.state.mapdata,
-              
-            },
-          };
-      return(
-      <div className="content">
-          <div >
-      <ReactFC {
-        ...chartConfigs
-      }
-      />
-      </div>
-      <div className="tabledata">
-          <Table data={this.state.mapdata}/>
-      </div>
-      </div>
-      )
+import './map.css'
+import FusionCharts from 'fusioncharts';
+import Maps from 'fusioncharts/fusioncharts.maps';
+import World from 'fusioncharts/maps/fusioncharts.world';
+import ReactFC from 'react-fusioncharts';
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import Table from './table'
+ReactFC.fcRoot(FusionCharts, Maps, World, FusionTheme);
+
+
+
+class Map extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
     }
   }
-  
+
+
+  render() {
+    const chartConfigs = {
+      type: 'maps/tamilnadu',
+      width: 800,
+      height: 500,
+      dataFormat: 'json',
+      dataSource: {
+        "chart": {
+          "caption": "Covid-19 cases",
+          "theme": "fusion",
+          "formatNumberScale": "0",
+          "numberSuffix": " People",
+          "bgColor": "#",
+          "toolTipBorderColor": "#666666",
+          "toolTipBgColor": "#efefef",
+          "toolTipBgAlpha": "80",
+          "showToolTipShadow": "1",
+
+        },
+        "colorrange": {
+          "color": [{
+            "minvalue": "0",
+            "maxvalue": "0",
+            "code": "#FF0000",
+
+          }, {
+            "minvalue": "1",
+            "maxvalue": "5",
+            "code": "#FF0000",
+
+          }, {
+            "minvalue": "6",
+            "maxvalue": "50",
+            "code": "#0000FF",
+
+          }, {
+            "minvalue": "51",
+            "maxvalue": "200",
+            "code": "#00008b",
+
+          }]
+        },
+        "data": this.props.mapdata,
+
+      },
+    };
+    return (
+      <div className="content">
+        <div >
+          <div >
+            <div >
+              <Prismazoom
+                maxZoom={3}
+                scrollVelocity={0}   >
+                <ReactFC {
+                  ...chartConfigs
+                }
+                />
+              </Prismazoom>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    )
+  }
+}
+
 export default Map
