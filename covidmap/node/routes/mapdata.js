@@ -4,14 +4,13 @@ var fetch=require('node-fetch')
 
 /* GET users listing. */
 router.get('/',async function(req, res, next) {
-    let url='http://api.covid19india.org/state_district_wise.json';
-    const response = await fetch('http://api.covid19india.org/state_district_wise.json', {
+    var response = await fetch('http://api.covid19india.org/state_district_wise.json', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }
     });
-    const body = await response.json();
+    var body = await response.json();
 //     console.log(body['Tamil Nadu'].districtData)
     districtwise={}
      Object.keys(body['Tamil Nadu'].districtData).forEach((key,index)=>{
@@ -118,8 +117,14 @@ router.get('/',async function(req, res, next) {
 
       },
       {
+        "id": "IN.TN.TR",
+        "value": districtwise.Thiruvarur,
+        "name":"districtwise.Tiruvarur".slice(13)
+
+      },
+      {
         "id": "IN.TN.TL",
-        "value": districtwise.Tiruvarur,
+        "value": districtwise.Thiruvallur,
         "name":"districtwise.Tiruvarur".slice(13)
 
       },
@@ -137,7 +142,7 @@ router.get('/',async function(req, res, next) {
       },
       {
         "id": "IN.TN.NI",
-        "value": districtwise.Nilgris,
+        "value": districtwise["The Nilgiris"],
         "name":"districtwise.Nilgris".slice(13)
 
       },
@@ -147,13 +152,10 @@ router.get('/',async function(req, res, next) {
         "name":"districtwise.Theni".slice(13)
 
       },
-      
-      
-     
       {
         "id": "IN.TN.TK",
-        "value": districtwise.Thoothukudi,
-        "name":"districtwise.Thoothukudi".slice(13)
+        "value": districtwise.Thoothukkudi,
+        "name":"districtwise.Thoothukkudi".slice(13)
 
       },
       {
@@ -188,7 +190,7 @@ router.get('/',async function(req, res, next) {
       },
       {
         "id": "IN.TN.KC",
-        "value": districtwise.Kanchipuram,
+        "value": districtwise.Kancheepuram,
         "name":"districtwise.Kanchipuram".slice(13)
 
       },
@@ -210,8 +212,38 @@ router.get('/',async function(req, res, next) {
         "name":"districtwise.Kanniyakumari".slice(13)
 
       }
-    ]
-  res.send(data)
+    ];
+    statewise={}
+    tamilnadu={}
+    response = await fetch('https://api.covid19india.org/data.json', {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  });
+   body = await response.json();
+  var total=body.statewise[0]
+  for(i=0;i<body.statewise.length;i++){
+    if(body.statewise[i].statecode==="TN"){
+        tamilnadu=body.statewise[i]
+    }
+  }
+
+activity=[]
+  response = await fetch('https://api.covid19india.org/states_daily.json', {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  });
+   body = await response.json();
+   var j=0;
+  for(i=body.states_daily.length-18;i<body.states_daily.length;i++){
+        activity[j]=body.states_daily[i].tn;
+        j+=1;
+  }
+
+  res.send({data,total,tamilnadu,activity})
 });
 
 module.exports = router;
