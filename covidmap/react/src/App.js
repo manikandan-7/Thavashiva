@@ -47,7 +47,7 @@ export default class App extends React.Component {
   }
 
   mapdata = async () => {
-    const response = await fetch('http://http://139.59.13.123:9000/mapdata', {
+    const response = await fetch('http://139.59.13.123:9000/mapdata', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
